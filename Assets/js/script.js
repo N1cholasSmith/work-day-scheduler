@@ -1,13 +1,17 @@
 
 // current time -----------------------------------------------------------------------
 var time = moment();
-$("#time-display").text(time.format('dddd, MMM Do YYYY'));
+$("#time-display").text(time.format('dddd, MMM Do YYYY, h:mm:ss a'));
+// $("#hour").text(time.format('h:mm:ss a'));
 
+// time 
+// setInterval(function (){
+//     currentTime();
+// },1000);
 
 $(document).ready(function (){
     $("#save").on("click", function(event){
         savetask()
-        myModal.hide()
         console.log("savetask + hidemodal")
     })
 
@@ -52,18 +56,18 @@ $(document).ready(function (){
 
 
     // modul ---------------------------------------------------------------------------------
-    var myModal = new bootstrap.Modal(document.getElementById('task-modal'))
-    var myInput = document.getElementById('task-input')
+    // var myModal = new bootstrap.Modal(document.getElementById('task-modal'))
+    // var myInput = document.getElementById('task-input')
 
-    $("li").on('click', function(event){
-    console.log("mymodal")
-    myModal.show()
+    // $("li").on('click', function(event){
+    // console.log("mymodal")
+    // myModal.show()
 
-    });
+    // });
 
-    $("#close").on("click", function(event){
-    myModal.hide()
-    });
+    // $("#close").on("click", function(event){
+    // myModal.hide()
+    // });
 
     // Saving the Task ----------------------------------------------------------------------------------------------
 
