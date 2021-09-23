@@ -1,14 +1,11 @@
 
-// current time -----------------------------------------------------------------------
+// current time & date displayed at the top of the screen -----------------------------------------------------------------------
 var time = moment();
 $("#time-display").text(time.format('dddd, MMM Do YYYY, h:mm:ss a'));
-// $("#hour").text(time.format('h:mm:ss a'));
 
-
-
+// Saving the hourly message into local storage
 $(document).ready(function (){
     $(".save").on("click", function(event){
-        // savetask()
         let note = $(this).prev().val()
         let noteHour = $(this).attr("id").split("-")[1]
         localStorage.setItem(noteHour, note)
@@ -16,11 +13,9 @@ $(document).ready(function (){
 
     function savetask() {
         const value= document.getElementById("task").value
-        console.log(value)
         localStorage.setItem("saveSchedule", value)
     };
     
-
     // Retrieving the TextValue from localStorage --------------------------------------------------------------
 
     $("#7 .textValue").val(localStorage.getItem("7"));
@@ -34,12 +29,10 @@ $(document).ready(function (){
     $("#15 .textValue").val(localStorage.getItem("15"));
     $("#16 .textValue").val(localStorage.getItem("16"));
     $("#17 .textValue").val(localStorage.getItem("17"));
-    $("#18 .textValue").val(localStorage.getItem("17"));
-
-    // timeTracker ();
-
+    $("#18 .textValue").val(localStorage.getItem("18"));
 })
 
+// Current time/timetracker which controls color changes on the page IAW the relevant time.
 function currentTime(){
     var time = moment();
     $("#time-display").text(time.format('dddd, MMM Do YYYY, h:mm:ss a'));
@@ -48,8 +41,6 @@ function currentTime(){
     $(".timeBlock").each(function() {
 
             var checkHour = $(this).attr("id");
-            console.log(checkHour)
-            console.log(currentHour)
             checkHour = parseInt (checkHour);
             if (checkHour < currentHour) {
                 
@@ -60,7 +51,7 @@ function currentTime(){
                 $(this).removeClass("future");
                 console.log($(this))
             } else if (checkHour === currentHour) {
-            // 
+           
                 $(this).removeClass ("past");
                 $(this).addClass("present");
                 $(this).removeClass("future");
@@ -70,8 +61,6 @@ function currentTime(){
                 $(this).removeClass("present");
                 $(this).addClass("future");
         };      
-    
     })
-
 }
     setInterval(currentTime,1000);
