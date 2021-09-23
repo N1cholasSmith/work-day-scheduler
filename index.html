@@ -20,9 +20,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="./Assets/css/style.css" />
     
-
-    
-
     <title>Work Day Scheduler</title>
   </head>
 
@@ -36,64 +33,81 @@
     <div class="container">
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li id="7" class="list-group-item timeBlock d-flex">0700 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="textValue"></input>
-            <button id="save">
-              <i class="bi bi-check-square justify-content-flex-end"></i></div></li>
+          <li id="7" class="list-group-item past timeBlock d-flex">0700 |<div class="d-flex justify-content-between flex-grow-1">
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-7" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
             </button>
-
+          </li>
           <li id="8" class="list-group-item timeBlock d-flex">0800 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task">  </input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task">  </textarea>
+            <button id="button-8" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="9" class="list-group-item timeBlock d-flex">0900 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>            
+            <button id="button-9" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="10" class="list-group-item timeBlock d-flex">1000 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-10" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="11" class="list-group-item timeBlock d-flex">1100 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-11" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="12" class="list-group-item timeBlock d-flex">1200 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-12" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="13" class="list-group-item timeBlock d-flex">1300 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-13" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li> 
           <li id="14" class="list-group-item timeBlock d-flex">1400 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-14" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="15" class="list-group-item timeBlock d-flex">1500 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-15" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="16" class="list-group-item timeBlock d-flex">1600 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea class="textValue" id="task"></textarea>
+              <button id="button-16" class="save">
+                <i class="bi bi-check-square justify-content-flex-end"></i></div>
+              </button>
+          </li> 
           <li id="17" class="list-group-item timeBlock d-flex">1700 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-
+            <textarea  class="textValue" id="task"></textarea>
+            <button id="button-17" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
           <li id="18" class="list-group-item timeBlock d-flex">1800 |<div class="d-flex justify-content-between flex-grow-1">
-            <input class="task"></input><i class="bi bi-check-square justify-content-flex-end"></i></div></li>
-          
+            <textarea class="textValue" id="task"></textarea>
+            <button id="button-18" class="save">
+              <i class="bi bi-check-square justify-content-flex-end"></i></div>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
-    <div id="task-modal" class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p><input id="task-input" class="textValue">
-          </div>
-          <div class="modal-footer">
-            <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button id="save" type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
     </div>
 
 

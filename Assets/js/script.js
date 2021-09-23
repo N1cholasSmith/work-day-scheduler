@@ -4,74 +4,22 @@ var time = moment();
 $("#time-display").text(time.format('dddd, MMM Do YYYY, h:mm:ss a'));
 // $("#hour").text(time.format('h:mm:ss a'));
 
-// time 
-// setInterval(function (){
-//     currentTime();
-// },1000);
+
 
 $(document).ready(function (){
-    $("#save").on("click", function(event){
-        savetask()
-        console.log("savetask + hidemodal")
+    $(".save").on("click", function(event){
+        // savetask()
+        let note = $(this).prev().val()
+        let noteHour = $(this).attr("id").split("-")[1]
+        localStorage.setItem(noteHour, note)
     })
 
-
     function savetask() {
-        var timeSelected = $(this).parent().attr("id");
-        var value = $(this).siblings(".textValue").val();
-        localStorage.setItem(timeSelected, ($(this).siblings(".textValue").val()));
+        const value= document.getElementById("task").value
+        console.log(value)
+        localStorage.setItem("saveSchedule", value)
     };
-
-    // time tracker -----------------------------------------------------------------------
-
-    function timeTracker() {
-
-        var currentHour = moment().hour();
-
-        $(".timeBlock").each(function() {
-
-                var checkHour = $(this).parent().attr("id");
-
-                checkHour = parseInt (checkHour); 
-                if (checkHour < currentHour) {
-                // if > currentHour, text area is grey
-                    $(this).siblings().addClass ("past");
-                // removeClass ensures there are no conflicts
-                    $(this).siblings().removeClass("present");
-                    $(this).siblings().removeClass("future");
-                } else if (checkHour === currentHour) {
-                // 
-                    $(this).siblings().addClass ("past");
-                    $(this).siblings().removeClass("present");
-                    $(this).siblings().removeClass("future");
-                } else {
-                    $(this).siblings().addClass ("past");
-                    $(this).siblings().removeClass("present");
-                    $(this).siblings().removeClass("future");
-            };      
-        
-        })
-
-    };
-
-
-    // modul ---------------------------------------------------------------------------------
-    // var myModal = new bootstrap.Modal(document.getElementById('task-modal'))
-    // var myInput = document.getElementById('task-input')
-
-    // $("li").on('click', function(event){
-    // console.log("mymodal")
-    // myModal.show()
-
-    // });
-
-    // $("#close").on("click", function(event){
-    // myModal.hide()
-    // });
-
-    // Saving the Task ----------------------------------------------------------------------------------------------
-
-
+    
 
     // Retrieving the TextValue from localStorage --------------------------------------------------------------
 
@@ -88,6 +36,41 @@ $(document).ready(function (){
     $("#17 .textValue").val(localStorage.getItem("17"));
     $("#18 .textValue").val(localStorage.getItem("17"));
 
-    timeTracker ();
+    // timeTracker ();
 
 })
+
+function currentTime(){
+    var time = moment();
+    $("#time-display").text(time.format('dddd, MMM Do YYYY, h:mm:ss a'));
+    var currentHour = moment().hour();
+
+    $(".timeBlock").each(function() {
+
+            var checkHour = $(this).attr("id");
+
+            checkHour = parseInt (checkHour);
+            if (checkHour < currentHour) {
+                
+            // if > currentHour, text area is grey
+                $(this).addClass ("past");
+            // removeClass ensures there are no conflicts
+                $(this).removeClass("present");
+                $(this).removeClass("future");
+
+            } else if (checkHour === currentHour) {
+            // 
+                $(this).addClass ("past");
+                $(this).removeClass("present");
+                $(this).removeClass("future");
+
+            } else {
+                $(this).addClass ("past");
+                $(this).removeClass("present");
+                $(this).removeClass("future");
+        };      
+    
+    })
+
+}
+    setInterval(currentTime,1000);
