@@ -8,7 +8,7 @@
 ## Description
 The Work Day Schedule is a tool to help organise your day on a visual aid that adapts to the time of day. The Work Day Schedule tool is built with the user as the highest priority, with this in mind the page is very functional with a minimalistic approach. I learn how to use moment.js in this project as well as how to create an adaptive and reactive page.
 
-[workdayscheduler.com](https://github.com/N1cholasSmith/work-day-scheduler)
+[workdayscheduler.com](https://n1cholassmith.github.io/work-day-scheduler/)
 ---
 ## Table of Contents
 - [Usage] (#usage)
