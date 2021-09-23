@@ -48,7 +48,8 @@ function currentTime(){
     $(".timeBlock").each(function() {
 
             var checkHour = $(this).attr("id");
-
+            console.log(checkHour)
+            console.log(currentHour)
             checkHour = parseInt (checkHour);
             if (checkHour < currentHour) {
                 
@@ -57,17 +58,17 @@ function currentTime(){
             // removeClass ensures there are no conflicts
                 $(this).removeClass("present");
                 $(this).removeClass("future");
-
+                console.log($(this))
             } else if (checkHour === currentHour) {
             // 
-                $(this).addClass ("past");
-                $(this).removeClass("present");
+                $(this).removeClass ("past");
+                $(this).addClass("present");
                 $(this).removeClass("future");
 
             } else {
-                $(this).addClass ("past");
+                $(this).removeClass ("past");
                 $(this).removeClass("present");
-                $(this).removeClass("future");
+                $(this).addClass("future");
         };      
     
     })
